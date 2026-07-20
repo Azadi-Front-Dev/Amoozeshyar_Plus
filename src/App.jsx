@@ -1,17 +1,17 @@
+import "./App.css";
 import { useState } from "react";
+import { useRoutes } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
+import Home from "./Pages/Home";
 
+const routes = [{ path: "/", element: <Home /> }];
 function App() {
-  const [count, setCount] = useState(0);
-
+  const router = useRoutes(routes);
   return (
     <>
-      <div className="w-30 mx-auto">
-        <h1 className="text-[34px] font-bold">Home</h1>
-      </div>
+      <div className=""></div>
+      {router}
     </>
   );
 }
