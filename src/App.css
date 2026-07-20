@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+
+
+
+  /* My colors */
+  --color-My-blue: #3629b7;
+  --color-My-gray: #CBCBCB;
+  --color-My-purlpe: #f0e5fb;
+
+}
