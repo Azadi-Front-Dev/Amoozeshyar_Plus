@@ -2,11 +2,14 @@ import React from "react";
 import InputLogin from "../Components/Login/InputLogin";
 import Logo from "../Components/Login/Logo";
 import { Link } from "react-router-dom";
-
+import { IoIosArrowBack } from "react-icons/io";
 const Signup = () => {
   return (
     <div className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
-      <h3 className="text-white text-[24px]">Sign up</h3>
+      <h3 className=" flex items-center text-white text-[24px] gap-2">
+        <IoIosArrowBack />
+        Sign up
+      </h3>
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
         <h3 className="text-My-blue text-[32px] font-bold "> Welcome Back</h3>
         <h5 className=" text-[16px] "> Hello there, create New account</h5>

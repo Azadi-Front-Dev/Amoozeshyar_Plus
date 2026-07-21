@@ -6,11 +6,14 @@ import viteLogo from "./assets/vite.svg";
 import Home from "./Pages/Home";
 import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
+import Forgotpassword from "./Pages/Forgotpassword";
+
 
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/Signin", element: <Signin /> },
   { path: "/Signup", element: <Signup /> },
+  { path: "/Forgotpassword", element: <Forgotpassword/> },
 ];
 function App() {
   const router = useRoutes(routes);
