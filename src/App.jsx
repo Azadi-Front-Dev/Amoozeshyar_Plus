@@ -4,11 +4,13 @@ import { useRoutes } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import Home from "./Pages/Home";
-import Login from "./Pages/Login";
+import Signin from "./Pages/Signin";
+import Signup from "./Pages/Signup";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/Login", element: <Login /> },
+  { path: "/Signin", element: <Signin /> },
+  { path: "/Signup", element: <Signup /> },
 ];
 function App() {
   const router = useRoutes(routes);
