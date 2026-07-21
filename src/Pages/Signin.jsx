@@ -25,9 +25,10 @@ const Signin = () => {
           <button className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
             Log in
           </button>
-          <h5 className=" text-[16px] text-My-blue ">
-            <Link to={"/Signup"}>You dont have account ? Sign up</Link>
-          </h5>
+
+          <Link to={"/Signup"} className=" text-[16px] text-My-blue ">
+            You dont have account ? Sign up
+          </Link>
         </div>
       </div>
     </div>
