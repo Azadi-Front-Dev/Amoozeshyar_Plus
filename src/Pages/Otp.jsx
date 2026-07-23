@@ -12,24 +12,15 @@ const Otp = () => {
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
         <div className="w-full flex flex-col justify-center  p-3 gap-5">
           <h2 className=" text-[16px] font-bold ">
-            کد دریافت شده را وارد نمایید
+            کد تأیید به شماره همراه شما ارسال شد. لطفاً کد دریافتی را وارد کنید.
           </h2>
           <div className="flex items-center justify-center gap-5">
-            <InputLogin type="number" placeholder="Code" />
+            <InputLogin type="text" placeholder="_ _ _ _ _ " className="text-center"/>
             <button className="w-57 border-2 bg-My-blue text-white  rounded-2xl p-3">
               ارسال مجدد
             </button>
           </div>
 
-          <div className="flex items-center justify-centerfont-bold text-My-gray">
-            <p>
-              کد تأیید به شماره همراه شما ارسال شد. لطفاً کد دریافتی را وارد
-              کنید.
-              {/* <span className="font-semibold text-My-blue cursor-pointer m-1">
-                (+84) 0398829xxx
-              </span> */}
-            </p>
-          </div>
           <h5 className=" text-[16px] ">
             این کد تا ۱۰ دقیقه پس از ارسال معتبر است. اگر پیامک را دریافت
             نکردید، دوباره درخواست ارسال کد دهید.
@@ -41,7 +32,7 @@ const Otp = () => {
             to={"/Forgotpassword"}
             className=" text-[16px] text-My-blue mx-auto"
           >
-            اصلاح کد ملی یا شماره دانشجویی  
+            اصلاح کد ملی یا شماره دانشجویی
           </Link>
         </div>
       </div>
