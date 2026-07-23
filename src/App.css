@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Vazir;
-  src: url(../public/Fonts/Vazir.woff2) format("woff2");
+  src: url(/Fonts/Vazir.woff2) format("woff2");
 }
 body {
   font-family: "Vazir";
@@ -13,6 +13,7 @@ body {
   --font-vazir: "Vazir";
   /* My colors */
   --color-My-blue: #3629b7;
+  --color-My-gray: #8b89a1;
   --color-My-gray: #cbcbcb;
   --color-My-purlpe: #f0e5fb;
 }
