@@ -1,11 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import InputLogin from "../Components/Login/InputLogin";
 import Logo from "../Components/Login/Logo";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 const Signup = () => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [nationalcode, setNationalcode] = useState("");
+  const [birthdaydate, setBirthdaydate] = useState("");
+  const [placeofissue, setPlaceofissue] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmpassword] = useState("");
+  const firstnameHandle = () => {
+    setFirstname(event.target.value);
+  };
+  const lastnameHandle = () => {
+    setLastname(event.target.value);
+  };
+  const nationalcodeHandle = () => {
+    setNationalcode(event.target.value);
+  };
+  const birthdaydateHandle = () => {
+    setBirthdaydate(event.target.value);
+  };
+  const placeofissueHandle = () => {
+    setPlaceofissue(event.target.value);
+  };
+  const passwordHandle = () => {
+    setPassword(event.target.value);
+  };
+
+  const confirmpasswordHandle = () => {
+    setConfirmpassword(event.target.value);
+  };
+  const submitHadnle = () => {
+    event.preventDefault()
+    console.log(firstname);
+    console.log(lastname);
+    console.log(nationalcode);
+    console.log(birthdaydate);
+    console.log(placeofissue);
+    console.log(password);
+    
+  };
+
+
   return (
-    <div className="w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <form onSubmit={submitHadnle} className="w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         ثبت نام
         <IoIosArrowBack />
@@ -13,13 +54,48 @@ const Signup = () => {
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
         <Logo />
         <div className="w-full flex flex-col items-center justify-center  p-3 gap-5">
-          <InputLogin type="text" placeholder="نام " />
-          <InputLogin type="text" placeholder="نام خانوادگی" />
-          <InputLogin type="text" placeholder="کدملی" />
-          <InputLogin type="text" placeholder="تاریخ تولد" />
-          <InputLogin type="text" placeholder=" محل صدور" />
-          <InputLogin type="password" placeholder="کلمه عبور" />
-          <InputLogin type="password" placeholder="تکرار کلمه عبور" />
+          <InputLogin
+            type="text"
+            placeholder="نام "
+            value={firstname}
+            onChange={firstnameHandle}
+          />
+          <InputLogin
+            type="text"
+            placeholder="نام خانوادگی"
+            value={lastname}
+            onChange={lastnameHandle}
+          />
+          <InputLogin
+            type="text"
+            placeholder="کدملی"
+            value={nationalcode}
+            onChange={nationalcodeHandle}
+          />
+          <InputLogin
+            type="text"
+            placeholder="تاریخ تولد"
+            value={birthdaydate}
+            onChange={birthdaydateHandle}
+          />
+          <InputLogin
+            type="text"
+            placeholder=" محل صدور"
+            value={placeofissue}
+            onChange={placeofissueHandle}
+          />
+          <InputLogin
+            type="password"
+            placeholder="کلمه عبور"
+            value={password}
+            onChange={passwordHandle}
+          />
+          <InputLogin
+            type="password"
+            placeholder="تکرار کلمه عبور"
+            value={confirmpassword}
+            onChange={confirmpasswordHandle}
+          />
           <div className=" text-[16px] flex items-center justify-center gap-4">
             <input type="checkbox" placeholder="Password" className="w-6 h-6" />
             <div className="flex flex-wrap items-center gap-2 max-w-60">
@@ -33,7 +109,7 @@ const Signup = () => {
               <span>موافقم و آن را می‌پذیرم.</span>
             </div>
           </div>
-          <button className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
+          <button type="submit" className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
             ثبت نام
           </button>
 
@@ -42,7 +118,7 @@ const Signup = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
