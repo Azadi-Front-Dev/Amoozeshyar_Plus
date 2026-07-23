@@ -6,8 +6,8 @@ const Otp = () => {
   return (
     <div className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
       <h3 className=" flex items-center text-white text-[24px] gap-2">
+        فراموشی رمز عبور
         <IoIosArrowBack />
-        Forgot password
       </h3>
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
         <div className="w-full flex flex-col justify-center  p-3 gap-5">
@@ -16,7 +16,7 @@ const Otp = () => {
           </h2>
           <div className="flex items-center justify-center gap-5">
             <InputLogin type="number" placeholder="Code" />
-            <button className="w-[40%] border-2 bg-My-blue text-white  rounded-2xl p-3">
+            <button className="w-57 border-2 bg-My-blue text-white  rounded-2xl p-3">
               ارسال مجدد
             </button>
           </div>
