@@ -11,30 +11,38 @@ const Otp = () => {
       </h3>
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
         <div className="w-full flex flex-col justify-center  p-3 gap-5">
-          <h2 className=" text-[16px] font-bold ">Type a code</h2>
+          <h2 className=" text-[16px] font-bold ">
+            کد دریافت شده را وارد نمایید
+          </h2>
           <div className="flex items-center justify-center gap-5">
-            <InputLogin type="text" placeholder="Code" />
+            <InputLogin type="number" placeholder="Code" />
             <button className="w-[40%] border-2 bg-My-blue text-white  rounded-2xl p-3">
-              Resend
+              ارسال مجدد
             </button>
           </div>
 
           <div className="flex items-center justify-centerfont-bold text-My-gray">
             <p>
-              We texted you a code to verify your phone number
-              <span className="font-semibold text-My-blue cursor-pointer m-1">
+              کد تأیید به شماره همراه شما ارسال شد. لطفاً کد دریافتی را وارد
+              کنید.
+              {/* <span className="font-semibold text-My-blue cursor-pointer m-1">
                 (+84) 0398829xxx
-              </span>
+              </span> */}
             </p>
           </div>
           <h5 className=" text-[16px] ">
-            This code will expired 10 minutes after this message. If you don't
-            get a message.
+            این کد تا ۱۰ دقیقه پس از ارسال معتبر است. اگر پیامک را دریافت
+            نکردید، دوباره درخواست ارسال کد دهید.
           </h5>
           <button className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
-            Change password
+            تغییر رمز عبور
           </button>
-          <Link to={"/Forgotpassword"} className=" text-[16px] text-My-blue mx-auto">Wrong number ? change it</Link>
+          <Link
+            to={"/Forgotpassword"}
+            className=" text-[16px] text-My-blue mx-auto"
+          >
+            اصلاح کد ملی یا شماره دانشجویی  
+          </Link>
         </div>
       </div>
     </div>
