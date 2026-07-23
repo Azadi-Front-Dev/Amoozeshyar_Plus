@@ -5,7 +5,7 @@ const InputLogin = ({ type, placeholder }) => {
     <input
       type={type}
       placeholder={placeholder}
-      className="w-full border-2 border-My-gray  rounded-2xl p-3"
+      className="w-full border-2 border-My-gray  rounded-2xl py-3 px-8"
     />
   );
 };

@@ -11,8 +11,6 @@ const Signup = () => {
         <IoIosArrowBack />
       </h3>
       <div className="flex-col items-center justify-start w-full max-w-100   bg-white rounded-[20px] p-4">
-        <h3 className="text-My-blue text-[32px] font-bold "> آموزشیار</h3>
-        <h5 className=" text-[16px] "> سامانه جامع مدیریت آموزشی دانشگاه</h5>
         <Logo />
         <div className="w-full flex flex-col items-center justify-center  p-3 gap-5">
           <InputLogin type="text" placeholder="نام " />
