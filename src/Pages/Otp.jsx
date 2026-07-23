@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import InputLogin from "../Components/Login/InputLogin";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 const Otp = () => {
+  const [otp, setOtp] = useState("");
+  const otphandle = () => {
+    setOtp(event.target.value);
+  };
+  const Otpsubmit = () => {
+    event.preventDefault()
+    console.log(otp);
+    
+  };
+
   return (
-    <div className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <form onSubmit={Otpsubmit} className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         فراموشی رمز عبور
         <IoIosArrowBack />
@@ -15,7 +25,13 @@ const Otp = () => {
             کد تأیید به شماره همراه شما ارسال شد. لطفاً کد دریافتی را وارد کنید.
           </h2>
           <div className="flex items-center justify-center gap-5">
-            <InputLogin type="text" placeholder="_ _ _ _ _ " className="text-center"/>
+            <InputLogin
+              type="text"
+              value={otp}
+              onChange={otphandle}
+              placeholder="_ _ _ _ _ "
+              className="text-center"
+            />
             <button className="w-57 border-2 bg-My-blue text-white  rounded-2xl p-3">
               ارسال مجدد
             </button>
@@ -25,8 +41,8 @@ const Otp = () => {
             این کد تا ۱۰ دقیقه پس از ارسال معتبر است. اگر پیامک را دریافت
             نکردید، دوباره درخواست ارسال کد دهید.
           </h5>
-          <button className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
-            تغییر رمز عبور
+          <button type="submit" className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
+            برسی کد
           </button>
           <Link
             to={"/Forgotpassword"}
@@ -36,7 +52,7 @@ const Otp = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
