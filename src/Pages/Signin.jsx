@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 const Signin = () => {
   return (
-    <div className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <div className="w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         ورود به حساب
         <IoIosArrowBack />

@@ -1,8 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import { useRoutes } from "react-router-dom";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
 import Home from "./Pages/Home";
 import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";

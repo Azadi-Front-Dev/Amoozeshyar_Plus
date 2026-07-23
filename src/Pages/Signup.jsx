@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 const Signup = () => {
   return (
-    <div className=" w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <div className="w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         ثبت نام
         <IoIosArrowBack />
@@ -24,7 +24,10 @@ const Signup = () => {
             <input type="checkbox" placeholder="Password" className="w-6 h-6" />
             <div className="flex flex-wrap items-center gap-2 max-w-60">
               <span>با شرایط استفاده و قوانین سامانه</span>
-              <Link to={'/'} className="text-My-blue font-semibold cursor-pointer">
+              <Link
+                to={"/"}
+                className="text-My-blue font-semibold cursor-pointer"
+              >
                 آموزشیار
               </Link>
               <span>موافقم و آن را می‌پذیرم.</span>
