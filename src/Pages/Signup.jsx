@@ -21,6 +21,7 @@ const Signup = () => {
       placeofissue: "",
       password: "",
       confirmpassword: "",
+      terms: false,
     },
     resolver: zodResolver(signupSchema),
   });
@@ -111,7 +112,12 @@ const Signup = () => {
             </span>
           )}
           <div className=" text-[16px] flex items-center justify-center gap-4">
-            <input type="checkbox" placeholder="Password" className="w-6 h-6" />
+            <input
+              type="checkbox"
+              placeholder="Password"
+              className="w-6 h-6"
+              {...register("terms")}
+            />
             <div className="flex flex-wrap items-center gap-2 max-w-60">
               <span>با شرایط استفاده و قوانین سامانه</span>
               <Link

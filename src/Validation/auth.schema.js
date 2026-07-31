@@ -30,7 +30,7 @@ export const signupSchema = z
 
     nationalcode: z
       .string()
-      .min(1, "کد ملی الزامی است")
+      .min(1, "وارد کردن کد ملی الزامی است")
       .regex(nationalCodeRegex, "کد ملی باید ۱۰ رقم باشد"),
 
     birthdaydate: z
@@ -48,14 +48,32 @@ export const signupSchema = z
 
     password: z
       .string()
-      .min(8, "رمز عبور باید حداقل ۸ کاراکتر باشد")
+      .min(
+        8,
+        "رمز عبور باید حداقل ۸ کاراکتر و شامل حروف بزرگ و کوچک و ارقام باشد",
+      )
       .regex(/[A-Z]/, "حداقل یک حرف بزرگ وارد کنید")
       .regex(/[a-z]/, "حداقل یک حرف کوچک وارد کنید")
       .regex(/[0-9]/, "حداقل یک عدد وارد کنید"),
 
     confirmpassword: z.string().min(1, "تکرار رمز عبور الزامی است"),
+    terms: z.literal(true, {
+      error: () => ({
+        message: "پذیرش قوانین و مقررات الزامی است",
+      }),
+    }),
   })
   .refine((data) => data.password === data.confirmpassword, {
     message: "رمز عبور و تکرار آن یکسان نیست",
     path: ["confirmpassword"],
   });
+
+export const forgetpasswordSchema = z.object({
+  unicode: z.union([
+    // z.string().regex(/^\d{10}$/, ""),
+    z
+      .string()
+      .min(1, "وارد کردن دانشجویی الزامی است. ")
+      .regex(/^\d{14}$/, "شماره دانشجویی صحیح نمی‌باشد.")
+  ]),
+});
