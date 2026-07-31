@@ -1,13 +1,19 @@
-const InputLogin = ({ type, value, placeholder, onChange, className = "" }) => {
-  return (
-    <input
-      type={type}
-      value={value}
-      placeholder={placeholder}
-      onChange={onChange}
-      className={`w-full border-2 border-My-gray rounded-2xl py-3 px-8 ${className}`}
-    />
-  );
-};
+import React, { forwardRef } from "react";
+
+const InputLogin = forwardRef(
+  ({ type, placeholder, className = "", ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        type={type}
+        placeholder={placeholder}
+        className={`w-full border-2 border-My-gray rounded-2xl py-3 px-8 ${className}`}
+        {...props}
+      />
+    );
+  }
+);
+
+InputLogin.displayName = "InputLogin";
 
 export default InputLogin;

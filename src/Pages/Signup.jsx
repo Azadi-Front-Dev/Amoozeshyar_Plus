@@ -3,50 +3,36 @@ import InputLogin from "../Components/Login/InputLogin";
 import Logo from "../Components/Login/Logo";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { signupSchema } from "../Validation/auth.schema";
+
 const Signup = () => {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [nationalcode, setNationalcode] = useState("");
-  const [birthdaydate, setBirthdaydate] = useState("");
-  const [placeofissue, setPlaceofissue] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
-  const firstnameHandle = () => {
-    setFirstname(event.target.value);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      nationalcode: "",
+      birthdaydate: "",
+      placeofissue: "",
+      password: "",
+      confirmpassword: "",
+    },
+    resolver: zodResolver(signupSchema),
+  });
+  const SendForm = (data) => {
+    console.log(data);
   };
-  const lastnameHandle = () => {
-    setLastname(event.target.value);
-  };
-  const nationalcodeHandle = () => {
-    setNationalcode(event.target.value);
-  };
-  const birthdaydateHandle = () => {
-    setBirthdaydate(event.target.value);
-  };
-  const placeofissueHandle = () => {
-    setPlaceofissue(event.target.value);
-  };
-  const passwordHandle = () => {
-    setPassword(event.target.value);
-  };
-
-  const confirmpasswordHandle = () => {
-    setConfirmpassword(event.target.value);
-  };
-  const submitHadnle = () => {
-    event.preventDefault()
-    console.log(firstname);
-    console.log(lastname);
-    console.log(nationalcode);
-    console.log(birthdaydate);
-    console.log(placeofissue);
-    console.log(password);
-    
-  };
-
 
   return (
-    <form onSubmit={submitHadnle} className="w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <form
+      onSubmit={handleSubmit(SendForm)}
+      className="w-full bg-My-blue flex flex-col items-center justify-center gap-7 p-3"
+    >
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         ثبت نام
         <IoIosArrowBack />
@@ -57,45 +43,73 @@ const Signup = () => {
           <InputLogin
             type="text"
             placeholder="نام "
-            value={firstname}
-            onChange={firstnameHandle}
+            {...register("firstname")}
           />
+          {errors.firstname && (
+            <span className="text-sm text-red-500">
+              {errors.firstname.message}
+            </span>
+          )}
           <InputLogin
             type="text"
             placeholder="نام خانوادگی"
-            value={lastname}
-            onChange={lastnameHandle}
+            {...register("lastname")}
           />
+          {errors.lastname && (
+            <span className="text-sm text-red-500">
+              {errors.lastname.message}
+            </span>
+          )}
           <InputLogin
             type="text"
             placeholder="کدملی"
-            value={nationalcode}
-            onChange={nationalcodeHandle}
+            {...register("nationalcode")}
           />
+          {errors.nationalcode && (
+            <span className="text-sm text-red-500">
+              {errors.nationalcode.message}
+            </span>
+          )}
           <InputLogin
             type="text"
             placeholder="تاریخ تولد"
-            value={birthdaydate}
-            onChange={birthdaydateHandle}
+            {...register("birthdaydate")}
           />
+          {errors.birthdaydate && (
+            <span className="text-sm text-red-500">
+              {errors.birthdaydate.message}
+            </span>
+          )}
           <InputLogin
             type="text"
             placeholder=" محل صدور"
-            value={placeofissue}
-            onChange={placeofissueHandle}
+            {...register("placeofissue")}
           />
+          {errors.placeofissue && (
+            <span className="text-sm text-red-500">
+              {errors.placeofissue.message}
+            </span>
+          )}
           <InputLogin
             type="password"
             placeholder="کلمه عبور"
-            value={password}
-            onChange={passwordHandle}
+            {...register("password")}
           />
+          {errors.password && (
+            <span className="text-sm text-red-500">
+              {errors.password.message}
+            </span>
+          )}
           <InputLogin
             type="password"
             placeholder="تکرار کلمه عبور"
-            value={confirmpassword}
-            onChange={confirmpasswordHandle}
+            {...register("confirmpassword")}
           />
+          {errors.confirmpassword && (
+            <span className="text-sm text-red-500">
+              {errors.confirmpassword.message}
+            </span>
+          )}
           <div className=" text-[16px] flex items-center justify-center gap-4">
             <input type="checkbox" placeholder="Password" className="w-6 h-6" />
             <div className="flex flex-wrap items-center gap-2 max-w-60">
@@ -109,7 +123,10 @@ const Signup = () => {
               <span>موافقم و آن را می‌پذیرم.</span>
             </div>
           </div>
-          <button type="submit" className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
+          <button
+            type="submit"
+            className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3"
+          >
             ثبت نام
           </button>
 
