@@ -77,3 +77,9 @@ export const forgetpasswordSchema = z.object({
       .regex(/^\d{14}$/, "شماره دانشجویی صحیح نمی‌باشد.")
   ]),
 });
+
+export const otpSchema = z.object({
+  otp: z
+    .string()
+    .regex(/^\d{5}$/, "کد تأیید باید شامل ۵ رقم باشد"),
+});

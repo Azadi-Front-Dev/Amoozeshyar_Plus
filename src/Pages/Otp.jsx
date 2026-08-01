@@ -4,17 +4,19 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { ota } from "zod/locales";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { otpSchema } from "../Validation/auth.schema";
 const Otp = () => {
   const {
     register,
-    isValid,
+
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors, isSubmitSuccessful, isValid },
   } = useForm({
     defaultValues: {
       otp: "",
     },
-    // resolver:
+    resolver: zodResolver(otpSchema),
   });
 
   const Otpsubmit = (otp) => {
@@ -38,6 +40,7 @@ const Otp = () => {
           <div className="flex items-center justify-center gap-5">
             <InputLogin
               type="text"
+              maxLength="5"
               {...register("otp")}
               placeholder="_ _ _ _ _ "
               className="text-center"
@@ -46,6 +49,9 @@ const Otp = () => {
               ارسال مجدد
             </button>
           </div>
+          {errors.otp && (
+            <span className="text-sm text-red-500">{errors.otp.message}</span>
+          )}
 
           <h5 className=" text-[16px] ">
             این کد تا ۱۰ دقیقه پس از ارسال معتبر است. اگر پیامک را دریافت

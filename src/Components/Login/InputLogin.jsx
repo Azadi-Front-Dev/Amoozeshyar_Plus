@@ -1,9 +1,10 @@
 import React, { forwardRef } from "react";
 
 const InputLogin = forwardRef(
-  ({ type, placeholder, className = "", ...props }, ref) => {
+  ({ type, placeholder, className = "", maxLength, ...props }, ref) => {
     return (
       <input
+        maxLength={maxLength}
         ref={ref}
         type={type}
         placeholder={placeholder}
@@ -11,7 +12,7 @@ const InputLogin = forwardRef(
         {...props}
       />
     );
-  }
+  },
 );
 
 InputLogin.displayName = "InputLogin";
