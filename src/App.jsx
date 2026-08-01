@@ -6,6 +6,7 @@ import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
 import Forgotpassword from "./Pages/Forgotpassword";
 import Otp from "./Pages/Otp";
+import Dashboard from "./Pages/Dashboard";
 
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
   { path: "/Signup", element: <Signup /> },
   { path: "/Forgotpassword", element: <Forgotpassword/> },
   { path: "/Otp", element: <Otp/> },
+  { path: "/Dashboard", element: <Dashboard/> },
 ];
 function App() {
   const router = useRoutes(routes);

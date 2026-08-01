@@ -7,12 +7,18 @@
 body {
   font-family: "Vazir";
 }
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @theme {
   /* My Fonts */
   --font-vazir: "Vazir";
   /* My colors */
   --color-My-blue: #3629b7;
+  --color-My-skyblue: #c2d8eb;
   --color-My-gray: #8b89a1;
   --color-My-gray: #cbcbcb;
   --color-My-purlpe: #f0e5fb;
