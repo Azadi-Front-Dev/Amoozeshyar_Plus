@@ -11,7 +11,7 @@ const Signup = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, isSubmitSuccessful },
   } = useForm({
     defaultValues: {
       firstname: "",
@@ -129,9 +129,10 @@ const Signup = () => {
               <span>موافقم و آن را می‌پذیرم.</span>
             </div>
           </div>
+
           <button
             type="submit"
-            className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3"
+            className={`w-full border-2 border-My-gray  ${isValid ? "bg-indigo-600" : "bg-My-purlpe"} text-white  rounded-2xl p-3 hover:cursor-pointer`}
           >
             ثبت نام
           </button>

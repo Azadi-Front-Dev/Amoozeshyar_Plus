@@ -2,19 +2,30 @@ import React, { useState } from "react";
 import InputLogin from "../Components/Login/InputLogin";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { ota } from "zod/locales";
 const Otp = () => {
-  const [otp, setOtp] = useState("");
-  const otphandle = () => {
-    setOtp(event.target.value);
-  };
-  const Otpsubmit = () => {
-    event.preventDefault()
+  const {
+    register,
+    isValid,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm({
+    defaultValues: {
+      otp: "",
+    },
+    // resolver:
+  });
+
+  const Otpsubmit = (otp) => {
     console.log(otp);
-    
   };
 
   return (
-    <form onSubmit={Otpsubmit} className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3">
+    <form
+      onSubmit={handleSubmit(Otpsubmit)}
+      className=" w-full h-screen bg-My-blue flex flex-col items-center justify-center gap-7 p-3"
+    >
       <h3 className=" flex items-center text-white text-[24px] gap-2">
         فراموشی رمز عبور
         <IoIosArrowBack />
@@ -27,8 +38,7 @@ const Otp = () => {
           <div className="flex items-center justify-center gap-5">
             <InputLogin
               type="text"
-              value={otp}
-              onChange={otphandle}
+              {...register("otp")}
               placeholder="_ _ _ _ _ "
               className="text-center"
             />
@@ -41,7 +51,10 @@ const Otp = () => {
             این کد تا ۱۰ دقیقه پس از ارسال معتبر است. اگر پیامک را دریافت
             نکردید، دوباره درخواست ارسال کد دهید.
           </h5>
-          <button type="submit" className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3">
+          <button
+            type="submit"
+            className={`w-full border-2 border-My-gray  ${isValid ? "bg-indigo-600" : "bg-My-purlpe"} text-white  rounded-2xl p-3 hover:cursor-pointer`}
+          >
             برسی کد
           </button>
           <Link

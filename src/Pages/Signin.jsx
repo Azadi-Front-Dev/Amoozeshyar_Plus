@@ -10,7 +10,7 @@ const Signin = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful, isValid },
   } = useForm({
     defaultValues: {
       username: "",
@@ -62,7 +62,7 @@ const Signin = () => {
           </Link>
           <button
             type="submit"
-            className="w-full border-2 border-My-gray bg-My-purlpe text-white  rounded-2xl p-3"
+            className={`w-full border-2 border-My-gray  ${isValid ? "bg-indigo-600" : "bg-My-purlpe"} text-white  rounded-2xl p-3 hover:cursor-pointer`}
           >
             ورود به سامانه
           </button>
